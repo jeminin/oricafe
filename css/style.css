@@ -1,0 +1,751 @@
+@charset "UTF-8";
+
+/* 共通部分
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');------------------------------- */
+html {
+    font-size: 100%;
+}
+body{
+    /* 游ゴシックから、上品で大人っぽい「Noto Serif JP（明朝体）」に変更 */
+    font-family: "Noto Serif JP", "Yu Mincho", "游明朝", serif !important;
+    line-height: 1.8;
+    color: rgb(154, 180, 189);
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+/* 大きな背景画像 */
+.big-bg {
+    background-size: cover;
+    background-position: center top;
+}
+
+/* 見出し */
+.page-title {
+    font-size: 5rem;
+    font-family: 'Philosopher', serif;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.sub-title {
+    font-size: 3rem;
+    padding: 0 8px 8px;
+    border-bottom: 2px rgb(0, 126, 148) solid;
+    font-weight: normal;
+}
+
+/* ボタン */
+.button,
+input[type="submit"],
+button[type="submit"] {
+    /* 👇 フォント設定：Montserratを適用 */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;          /* 少し太めにして英語をかっこよく */
+    font-size: 1rem;           /* 文字の大きさ */
+    letter-spacing: 0.15em;    /* 文字の間隔を広げておしゃれに */
+    color: #fff !important;    /* 文字色は白 */
+    text-decoration: none;     /* 下線を消す */
+
+    /* 👇 ボタンの形と色（今の素敵な色をキープしています） */
+    display: inline-block;
+    background-color: #005263; /* 今の素敵な青緑色 */
+    padding: 10px 24px;        /* ボタンの内側の余白（上下、左右） */
+    border-radius: 50px;       /* 完璧なカプセル型にする魔法 */
+    
+    /* 👇 影とアニメーション */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 軽く浮かせる影 */
+    transition: all 0.3s ease; /* 変化をふんわり滑らかに */
+    
+    /* 👇 送信ボタン特有の初期枠線を消す設定を追加 */
+    border: none;
+    cursor: pointer;
+}
+
+/* マウスを乗せたときの動き（ホバー効果） */
+.button:hover,
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+    background-color: #003a47; /* 少し濃いめの色に変わる */
+    transform: translateY(-3px); /* 3px上にピョコッと浮く */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* 影を強くする */
+}
+
+/* iframe */
+iframe {
+    width: 100%;
+}
+
+/* HEADER
+------------------------------- */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+}
+.logo {
+    width: 210px;
+    margin-top: 14px;
+}
+.main-nav {
+    display: flex;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin-top: 34px;
+    list-style: none;
+}
+.main-nav li {
+    margin-left: 36px;
+}
+.main-nav a {
+    color: #fff;
+}
+.main-nav a:hover {
+    color: #0bd;
+}
+
+/* HOME
+------------------------------- */
+#home {
+    background-image: url(../images/karl-fredrickson-TYIzeCiZ_60-unsplash.jpg);
+    min-height: 100vh;
+    
+}
+#home .page-title {
+    text-transform: none;
+}
+.home-content {
+    text-align: center;
+    margin-top: 10%;
+}
+.home-content p {
+    font-size: 1.125rem;
+    margin: 10px 0 42px;
+}
+
+/* NEWS
+------------------------------- */
+#news {
+    background-image: url(../images/julian-christian-anderson-Ju1NOB8kt44-unsplash.jpg);
+    height: 270px;
+    margin-bottom: 40px;
+}
+#news .page-title {
+    text-align: center;
+}
+.news-contents {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+#news .sub-title {
+    font-size: 1.5rem;
+}
+/* 「オーナー自ら〜」の説明文の文字を大きくする */
+.sub-title + p {
+    font-size: 1.15rem; /* ★好みの大きさに調整してください（標準は 1rem 前後です） */
+    line-height: 1.8;   /* 行間を少し広げて読みやすくします */
+}
+
+
+/* 記事部分 */
+article {
+    width: 74%;
+}
+.post-info {
+    position: relative;
+    padding-top: 4px;
+    margin-bottom: 40px;
+}
+.post-date {
+    background: #0598b3af;
+    border-radius: 50%;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    font-size: 1.625rem;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    padding-top: 10px;
+}
+.post-date span {
+    font-size: 1rem;
+    border-top: 1px rgba(255, 255, 255, 0.322) solid;
+    padding-top: 6px;
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+}
+.post-title {
+    font-family: "Yu Mincho", "YuMincho", serif;
+    font-size: 2rem;
+    font-weight: normal;
+}
+.post-title,
+.post-cat {
+    margin-left: 120px;
+}
+article img {
+    margin-bottom: 20px;
+}
+article p {
+    margin-bottom: 1rem;
+}
+
+/* サイドバー */
+aside {
+    width: 22%;
+}
+.sub-menu {
+    margin-bottom: 60px;
+    list-style: none;
+}
+.sub-menu li {
+    border-bottom: 1px #ddd solid;
+}
+.sub-menu a {
+    color: #fff;
+    padding: 10px;
+    display: block;
+}
+.sub-menu a:hover {
+    color: #0bd;
+}
+aside p {
+    padding: 12px 10px;
+}
+
+/* MENU
+------------------------------- */
+/* 修正後 */
+#menu {
+    background-image: url(../images/nathan-dumlao-PX1IrPsimHE-unsplash.jpg);
+    background-size: cover;       /* 背景画像を画面いっぱいに広げる */
+    background-position: center;   /* 画像の中心を基準にする */
+    padding-top: 80px;           /* コンテンツが少ない時でも最低画面分の高さを確保 */
+    padding-bottom: 100px;          /* フッターの下に少し余白を作ると綺麗に見えます */
+}
+    
+.menu-content {
+    max-width: 560px;
+    margin: 0 auto;
+}
+.menu-content .page-title {
+    text-align: center;
+}
+.menu-content p {
+    font-size: 1.125rem;
+    margin: 10px 0 0;
+}
+/* MENUのタイトルや説明文のクラス・タグに適用 */
+.menu-title, .menu-description {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+.grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 6%;
+  margin-bottom: 50px;
+}
+/* グリッド内の各メニューアイテムの縦幅を揃える */
+.grid > div, .grid > article, .grid > section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* メニュー画像の高さを統一し、綺麗にトリミングする */
+.grid img {
+    width: 100%;
+    height: 350px;     /* ★好みの高さ（200px〜250px等）に調整してください */
+    object-fit: cover; /* 縦横比を崩さずに枠内に収める指定 */
+}
+
+
+/* CONTACT
+------------------------------- */
+#contact {
+    background-image: url(../images/jon-tyson-pEGyLHAPfVw-unsplash.jpg);
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    
+    /* 💡【パソコン用の設定】 */
+    
+    background-size: contain;
+    
+    
+    background-color: #1a1a1a; 
+    
+    /* 画像を画面の上の真ん中に配置 */
+    background-position: center top;
+}
+
+
+/* フォーム */
+form div {
+    margin-bottom: 14px;
+}
+label {
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+    display: block;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+    background: rgba(255,255,255,.5);
+    border: 1px #fff solid;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    max-width: 240px;
+}
+textarea {
+    width: 100%;
+    max-width: 480px;
+    height: 6rem;
+}
+input[type="submit"] {
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* 店舗情報・地図 */
+#location {
+    padding: 4% 0;
+}
+#location .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.location-info {
+    width: 22%;
+}
+.location-info p {
+    padding: 12px 10px;
+}
+.location-map {
+    width: 74%;
+}
+
+/* SNS */
+#sns {
+    background: #FAF7F0;
+    padding: 4% 0;
+}
+#sns .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+#sns .sub-title {
+    margin-bottom: 30px;
+}
+.sns-box {
+    width: 30%;
+}
+/* フッター ------------------------------- */
+footer {
+    display: block;
+    width: 100%;
+    box-sizing: border-box; 
+    
+    background-color: rgb(0, 90, 102); /* カフェ背景に馴染むダークカラー */
+    color: #fff;               /* 文字色：白 */
+    
+    padding: 20px 0;
+    margin-top: 50px;
+    
+   
+    text-align: left; 
+}
+
+/* 画面全体の横スクロールバー防止 */
+body, html {
+    overflow-x: hidden;
+}
+
+
+footer .wrapper, footer p, footer small {
+    text-align: left !important;
+    margin: 0 !important;
+    padding: 0 20px; /* スマホ画面のための余白 */
+}
+
+/* モバイル版
+------------------------------- */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+    .page-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* HEADER */
+    .main-nav {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+    .main-nav li {
+        margin: 0 20px;
+    }
+/* ナビゲーションのメニュー（ulタグ）の調整 */
+.main-nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 20px auto 0 auto; 
+    width: 80%;               
+    max-width: 400px;         
+}
+
+/* メニューの各項目（liタグ）の調整 */
+.main-nav li {
+    flex: 1;                 
+    text-align: center;       
+}
+
+/* リンク（aタグ）の調整 */
+.main-nav a {
+    display: block;
+    text-transform: uppercase; /* 小文字で書いてあっても大文字（NEWS等）に統一 */
+    font-size: 1rem;           /* スマホで見やすい文字サイズに固定 */
+    letter-spacing: 0.1em;     
+}
+    /* HOME */
+    .home-content {
+        margin-top: 20%;
+    }
+
+    /* NEWS */
+@media (max-width: 768px) {
+    
+    /* 💡【修正】flex-directionを効かせるため、親要素を「block」から「flex」に統一 */
+    .news-contents {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #news .page-title {
+        margin-top: 30px;
+    }
+    
+    /* 💡【最重要】widthを100%にして、文字が1文字ずつ縦に落ちるのを防ぐ！ */
+    article,
+    aside {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+    
+    /* 縦並びになった際、下に来るサイドバーの上に余白を作る */
+    aside {
+        margin-top: 60px;
+    }
+    
+   
+    .post-info {
+        margin-bottom: 30px;
+    }
+    
+    .post-date {
+        width: 70px;
+        height: 70px;
+        font-size: 1rem;
+    }
+    
+    .post-date span {
+        font-size: 0.875rem;
+        padding-top: 2px;
+    }
+    
+    .post-title {
+        font-size: 1.375rem;
+    }
+    
+    .post-cat {
+        font-size: 0.875rem;
+        margin-top: 10px;
+    }
+    
+    .post-title,
+    .post-cat {
+        margin-left: 80px;
+    }
+
+    
+    .menu-content {
+        margin-top: 20%;
+    }
+} 
+
+    /* MENU */
+    .menu-content {
+        margin-top: 20%;
+    }
+#contact {
+        /* スマホの時は、今の綺麗な見え方をキープするために cover に切り替える */
+        background-size: cover;
+        background-position: center top;
+    }
+}
+    
+    /* フォーム */
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        max-width: 100%;
+    }
+
+    /* 店舗情報・地図 / SNS */
+    #location .wrapper,
+    #sns .wrapper {
+        flex-direction: column;
+    }
+    .location-info,
+    .location-map,
+    .sns-box {
+        width: 100%;
+    }
+    .sns-box {
+        margin-bottom: 30px;
+    }
+/* ← ここでメディアクエリ（@media）全体を閉じます */
+
+/* ========================================================
+   画面幅に関係なく共通で適用したいスタイル（PC・スマホ共通）
+   ======================================================== */
+#news .sub-title {
+    font-size: 1.25em;
+}
+
+/* 英文の説明文（Our owner personally...）のスタイル */
+.sub-title + p {
+    font-size: 1.25rem; 
+    line-height: 1.8;   
+}
+
+/* 英文の説明文（Our owner personally...）をさらに少し大きくする */
+.sub-title + p {
+    font-size: 1.25rem; /* 1.15remから1.25remにアップ */
+    line-height: 1.8;   /* 行間をゆったりさせると、長い英文も読みやすくなります */
+}
+/* ========================================================
+   NEWS ページ スマホ対応（CSSファイルの最下部に追加）
+   ======================================================== */
+@media (max-width: 768px) {
+    /* 横並びのコンテナを縦並びに切り替え */
+    .news-contents {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* 記事メイン（article）とサイドバー（aside）の横幅を100%にする */
+    article,
+    aside {
+        width: 100%;
+    }
+    
+    /* 縦並びになった際、下に来るサイドバーの上に余白を作る */
+    aside {
+        margin-top: 60px;
+    }
+    
+    /* 以下、文字サイズや位置の微調整 */
+    #news .page-title {
+        margin-top: 30px;
+    }
+    .post-info {
+        margin-bottom: 30px;
+    }
+    .post-date {
+        width: 70px;
+        height: 70px;
+        font-size: 1rem;
+    }
+    .post-date span {
+        font-size: 0.875rem;
+        padding-top: 2px;
+    }
+    .post-title {
+        font-size: 1.375rem;
+    }
+    .post-cat {
+        font-size: 0.875rem;
+        margin-top: 10px;
+    }
+    .post-title,
+    .post-cat {
+        margin-left: 80px;
+    }
+    .menu-content {
+        margin-top: 20%;
+    }
+    #contact .page-title {
+        margin-top: 40px;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        max-width: 100%;
+    }
+    #location .wrapper,
+    #sns .wrapper {
+        flex-direction: column;
+    }
+    .location-info,
+    .location-map,
+    .sns-box {
+        width: 100%;
+    }
+    .sns-box {
+        margin-bottom: 30px;
+    }
+} /* ← メディアクエリを閉じる */
+
+/* PC・スマホ共通の文字サイズ調整 */
+#news .sub-title {
+    font-size: 1.25em;
+}
+.sub-title + p {
+    font-size: 1.25rem; 
+    line-height: 1.8;   
+}
+
+.home-content p {
+    /* 下の説明文（オーナー厳選…）も少し太くして、文字の周りを引き締めます */
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9), -1px -1px 2px rgba(0, 0, 0, 0.9);
+}
+/* ロゴの四角い背景を丸く切り抜いて、メニューと高さを揃える */
+.logo {
+    width: 120px !important;
+    height: 120px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+}
+/* 新しく追加したオーガニックコーヒーエリアの見た目を整える */
+#organic-coffee {
+    margin-bottom: 40px; /* 下の要素（YouTubeなど）とのすき間 */
+}
+
+#organic-coffee p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+/* NEWSページの「じっくり厳選された〜」や右側の文字を白く、くっきりさせる */
+#news .main-content h2,
+#news .main-content p,
+#news .sidebar h2,
+#news .sidebar p {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+/* MENUページのタイトルと説明文をくっきりさせる */
+#menu h1, 
+#menu p {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(0, 0, 0, 0.7);
+}
+/* 他のすべての設定を無視して、最優先で文字に影をつける */
+.home-content h1,
+.home-content p,
+.big-bg h1,
+.big-bg p {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 0, 0, 0.8) !important;
+}
+/* パソコンでもスマホでも文字をすっきり読みやすくする */
+.home-content h1,
+.home-content p,
+.big-bg h1,
+.big-bg p {
+    color: #ffffff !important;
+    /* 影の量を少しスリムにして、文字が潰れないように調整 */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8), 0 0 6px rgba(0, 0, 0, 0.6) !important;
+}
+.home-content h1,
+.big-bg h1 {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9), 0 0 12px rgba(0, 0, 0, 0.8) !important;
+}
+
+.home-content p,
+.big-bg p {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8), 0 0 6px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* ==========================================================
+   2. スマホ画面（幅767px以下）のときのMenuボタン完全復活ルール
+   ========================================================== */
+/* 右上のMenuボタンを絶対に白に戻す */
+.main-nav, .main-nav a, header p, header span, .menu-toggle {
+    color: #ffffff !important;
+}
+/* Menuボタンの見た目と位置を右上に完全復活 */
+.btn-menu {
+    position: absolute !important;     /* 位置を自由に動かせるようにする */
+    top: 20px !important;              /* 上からの位置を調整 */
+    right: 4% !important;              /* 右からの位置を画面端に合わせる */
+    color: #ffffff !important;         /* 文字色を白にする */
+    background-color: rgba(255, 255, 255, 0.1) !important; /* 薄白い背景をつける */
+    border: 1px solid #ffffff !important; /* 白いキレイな枠線をつける */
+    padding: 5px 15px !important;      /* ボタンの内側に少しゆとりを作る */
+    border-radius: 4px !important;     /* 角を少しだけ丸くする */
+    cursor: pointer !important;
+    z-index: 100 !important;           /* 画像の下に隠れないように最前面に出す */
+}
+/* ==========================================================
+   NEWSページの紹介文（雰囲気を残しつつ読みやすく）
+   ========================================================== */
+.sub-title + p,
+aside p {
+    color: #555555 !important; /* 💡真っ黒ではなく、深みのある上品な珈琲ブラウン */
+    font-weight: normal !important; /* 💡太字をやめて、すっきりスタイリッシュに */
+    line-height: 1.9 !important; /* 💡行間をほんの少し広げて、空気感を出します */
+}
+/* ==========================================================
+   MENUページのメニュー名（雰囲気を残しつつ読みやすく）
+   ========================================================== */
+.grid div, 
+.grid article, 
+.grid section,
+.grid p {
+    color: #4a3c31 !important; /* 💡真っ黒ではなく、上品な珈琲ブラウン */
+    font-weight: normal !important; /* 💡太字をやめてスタイリッシュに */
+    font-size: 1.05rem !important; /* 💡スマホでも見やすいサイズに微調整 */
+    margin-top: 12px !important; /* 💡画像との間に少しゆとりを作ります */
+}
+/* ==========================================================
+   トップページのメインコピーを絶対にクッキリ見やすくする
+   ========================================================== */
+h1 {
+    /* 文字の色を「白」にして、後ろに3重の黒い影を仕込みます */
+    color: #ffffff !important;
+    text-shadow: 
+        0 0 15px rgba(0, 0, 0, 1) !important;
+}
+
+#home p {
+    /* 下の「オーナー厳選…」の文字も、白＋影でクッキリ読みやすく */
+    color: #ffffff !important;
+    text-shadow: 
+        0 0 10px rgba(0, 0, 0, 1) !important;
+}

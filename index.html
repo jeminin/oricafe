@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>OriCafe</title>
+        <meta name="description" content="オーナー厳選挽きたてオーガニックコーヒー専門店">
+        <link rel="icon" type="image/png" href="images/rogoorifafe.jpg">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    </head>
+<style>
+   
+    .main-nav {
+      width: 0;
+      position: absolute;
+      top: 25px;
+      right: 0;
+      overflow: hidden;
+      transition: 0.5s;
+      display: block;
+    }
+    .main-nav li {
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+    .main-nav.open-menu {
+      width: 200px;
+    }
+  </style>
+    <body>
+        <div id="home" class="big-bg">
+            <header class="page-header wrapper">
+                <h1><a href="index.html"><img class="logo" src="images/logooricafa.jpg"alt="ORI"></a></h1>
+                <nav><button class="btn-menu">Menu</button>
+                    <ul class="main-nav">
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="home-content wrapper">
+                <h2 class="page-title">挽きたてコーヒーの音、薫り、静けさを。</h2>
+                <p>オーナー厳選オーガニックコーヒー専門店で、新しい発見をしませんか？</p>
+                <a class="button" href="menu.html">今月のMENU</a>
+            </div><!-- /.home-content -->
+        </div><!-- /#home -->
+    </body>
+    
+    <script>
+const btn =document .querySelector (".btn-menu");
+const nav =document .querySelector (".main-nav");
+btn.addEventListener("click",() => { 
+    nav.classList.toggle("open-menu");
+    if (btn.innerHTML === "Menu") {btn.innerHTML = "Close";
+    } else   {btn.innerHTML = "Menu";}
+});
+
+    </script>
+</html>
